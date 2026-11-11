@@ -1,2 +1,2 @@
-# website
-Personal website and all apps legal pages
+# deptapaul.dev
+Personal developer website for Depta Paul
