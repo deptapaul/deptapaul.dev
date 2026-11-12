@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <meta name="description" content="See what's new in GreenList. Read release notes, updates, and improvements.">
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+  <title>Release Notes - GreenList</title>
+  <style>
+    :root {
+      --green: #22c55e;
+      --green-dark: #13a84d;
+      --ink: #142019;
+      --muted: #68756d;
+      --line: #e8eee9;
+      --soft: #f3faf5;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(980px, calc(100% - 44px)); margin: 0 auto; }
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 20px; font-weight: 800; letter-spacing: -.5px; }
+    .brand img { width: 38px; height: 38px; border-radius: 11px; }
+    .back-link { color: #657269; font-size: 14px; font-weight: 600; }
+    .back-link:hover { color: var(--green-dark); }
+    .hero {
+      padding: 76px 0 58px;
+      background: radial-gradient(ellipse at 85% 10%, rgba(34,197,94,.10), transparent 34%), #f7fbf8;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: var(--green-dark); font-size: 12px; font-weight: 800;
+      letter-spacing: 1.6px; text-transform: uppercase;
+    }
+    .eyebrow:before { content: ""; width: 20px; height: 2px; background: var(--green); }
+    h1 { margin: 14px 0 12px; font-size: clamp(38px, 6vw, 56px); line-height: 1.08; letter-spacing: -2.6px; }
+    .hero p { max-width: 600px; margin: 0; color: var(--muted); font-size: 17px; }
+    main { padding: 58px 0 82px; }
+    .release-list { max-width: 760px; margin: 0 auto; }
+    .release {
+      position: relative; padding: 30px 32px 32px; border: 1px solid var(--line);
+      border-radius: 20px; background: #fff; box-shadow: 0 12px 36px rgba(19,70,35,.045);
+    }
+    .release-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+    .version { margin: 0; font-size: 25px; line-height: 1.25; letter-spacing: -.8px; }
+    .release-type {
+      display: inline-block; margin-top: 9px; padding: 5px 10px; border-radius: 999px;
+      color: #087d39; background: #e7f9ed; font-size: 11px; font-weight: 800;
+      letter-spacing: .7px; text-transform: uppercase;
+    }
+    .release-date { padding-top: 5px; color: #849087; font-size: 13px; white-space: nowrap; }
+    .release-intro { margin: 22px 0 20px; color: var(--muted); font-size: 15px; }
+    .release h3 { margin: 23px 0 10px; font-size: 15px; letter-spacing: -.2px; }
+    .updates { margin: 0; padding: 0; list-style: none; }
+    .updates li { position: relative; margin: 10px 0; padding-left: 25px; color: #4f5d54; font-size: 14px; }
+    .updates li:before {
+      content: "✓"; position: absolute; left: 0; top: 1px; display: grid; place-items: center;
+      width: 17px; height: 17px; border-radius: 50%; color: #087d39;
+      background: #e7f9ed; font-size: 11px; font-weight: 800;
+    }
+    .release-divider { height: 1px; margin: 25px 0 0; background: var(--line); }
+    .older-note { margin: 28px 0 0; color: #8a958e; font-size: 13px; text-align: center; }
+    footer { padding: 30px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 750; }
+    .footer-brand img { width: 28px; height: 28px; border-radius: 8px; }
+    .copyright { margin-top: 5px; color: #89958d; font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; color: #657269; font-size: 13px; }
+    .footer-links a:hover { color: var(--green-dark); }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 36px, 980px); }
+      .hero { padding: 58px 0 45px; }
+      main { padding: 38px 0 60px; }
+      .release { padding: 24px 21px; }
+      .release-top { flex-direction: column; gap: 7px; }
+      .release-date { padding: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-links { gap: 14px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="GreenList home">
+        <img src="../assets/greenlist-icon.png" alt="">
+        <span>GreenList</span>
+      </a>
+      <a class="back-link" href="index.html">← Back to GreenList</a>
+    </div>
+  </header>
 
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Product updates</div>
+      <h1>Release Notes</h1>
+      <p>What's new in GreenList. Follow the latest features, improvements, and fixes as the app continues to grow.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <div class="release-list">
+        <article class="release">
+          <div class="release-top">
+            <div>
+              <h2 class="version">Version 1.0.0</h2>
+              <span class="release-type">Initial Release</span>
+            </div>
+            <time class="release-date" datetime="2026-11-12">November 12, 2026</time>
+          </div>
+
+          <p class="release-intro">Welcome to the first release of GreenList! Organize your day, manage your tasks, and build routines with a simple, focused task management experience.</p>
+
+          <h3>What's included</h3>
+          <ul class="updates">
+            <li>Create and organize tasks using categories.</li>
+            <li>Add task details and subtasks to keep everything clear.</li>
+            <li>Schedule tasks and track completion.</li>
+            <li>Create repeating tasks for regular routines.</li>
+            <li>Customize tasks with background colors.</li>
+            <li>View your tasks and progress with Home Screen widgets.</li>
+            <li>Receive local notifications based on task schedules and repeating-task settings.</li>
+            <li>Use iCloud synchronization to keep supported app data in sync across your devices.</li>
+            <li>Import and export your task data.</li>
+            <li>Unlock additional capabilities with GreenList Premium.</li>
+          </ul>
+        </article>
+
+        <p class="older-note">More updates will appear here as new versions of GreenList are released.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <a class="footer-brand" href="index.html">
+          <img src="../assets/greenlist-icon.png" alt="">
+          <span>GreenList</span>
+        </a>
+        <div class="copyright">© 2026 Depta Paul. All rights reserved.</div>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="mailto:support@deptapaul.dev">Contact Support</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
