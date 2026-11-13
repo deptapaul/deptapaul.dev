@@ -1,1 +1,458 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GreenList Support | Depta Paul</title>
+    <meta name="description" content="Get help with GreenList. Find answers to common questions about tasks, categories, widgets, backups, and Premium features.">
+
+    <meta name="theme-color" content="#22C55E">
+
+    <style>
+        :root {
+            --green: #4CAF68;
+            --green-dark: #32834B;
+            --green-light: #EAF7ED;
+            --text: #202820;
+            --muted: #68746B;
+            --background: #F8FAF8;
+            --white: #FFFFFF;
+            --border: #E5EBE6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        a {
+            color: var(--green-dark);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: min(100% - 40px, 900px);
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 21px;
+            font-weight: 750;
+            color: var(--text);
+            letter-spacing: -0.6px;
+        }
+
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 11px;
+            display: block;
+            object-fit: cover;
+            flex: 0 0 36px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+            font-weight: 550;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 76px 20px 68px;
+            text-align: center;
+            background: linear-gradient(145deg, #EAF7ED, #F8FAF8 75%);
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 6px 14px;
+            background: #DDF2E2;
+            color: var(--green-dark);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 650;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 6vw, 48px);
+            line-height: 1.15;
+            letter-spacing: -1.8px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--green-dark);
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* Main content */
+
+        main {
+            padding: 55px 0 75px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            font-size: 27px;
+            letter-spacing: -0.7px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* Contact card */
+
+        .contact-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 65px;
+            box-shadow: 0 8px 30px rgba(30, 70, 40, 0.04);
+        }
+
+        .contact-icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 18px;
+            background: var(--green-light);
+            border-radius: 18px;
+            font-size: 27px;
+        }
+
+        .contact-card h2 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 650;
+            transition: background 0.2s;
+        }
+
+        .contact-button:hover {
+            background: var(--green-dark);
+            text-decoration: none;
+        }
+
+        /* FAQ */
+
+        .faq-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            padding: 21px 24px;
+        }
+
+        .faq-item h3 {
+            font-size: 16px;
+            margin-bottom: 9px;
+        }
+
+        .faq-item p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #F0F5F1;
+            border-top: 1px solid var(--border);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 550;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                min-height: 68px;
+            }
+
+            .nav-links {
+                gap: 13px;
+                font-size: 13px;
+            }
+
+            .brand {
+                font-size: 19px;
+            }
+
+            .hero {
+                padding: 60px 15px 55px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            main {
+                padding: 40px 0 55px;
+            }
+
+            .contact-card {
+                padding: 26px 18px;
+                margin-bottom: 48px;
+            }
+
+            .faq-item {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="/greenlist" class="brand">
+                <img class="brand-icon" src="https://deptapaul.dev/assets/greenlist-icon.png" alt="GreenList app icon" width="36" height="36">
+                GreenList
+            </a>
+
+            <nav class="nav-links">
+                <a href="/greenlist">Home</a>
+                <a href="/greenlist/support.html">Support</a>
+                <a href="/greenlist/privacy-policy">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <span class="hero-label">GREENLIST HELP CENTER</span>
+
+        <h1>We're here to <span>help.</span></h1>
+
+        <p>
+            Have a question or need assistance with GreenList?
+            Find answers to common questions or get in touch with
+            our support team.
+        </p>
+    </section>
+
+    <main class="container">
+
+        <section class="contact-card">
+            <div class="contact-icon">✉️</div>
+
+            <h2>Contact Support</h2>
+
+            <p>
+                Can't find the answer you're looking for?
+                Send us an email and we'll be happy to help.
+            </p>
+
+            <a class="contact-button"
+               href="mailto:support@deptapaul.dev?subject=GreenList%20Support">
+                Email Support
+            </a>
+        </section>
+
+        <section>
+            <div class="section-heading">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to help you get the most out of GreenList.</p>
+            </div>
+
+            <div class="faq-list">
+
+                <article class="faq-item">
+                    <h3>How do I organize my tasks?</h3>
+                    <p>
+                        You can create custom categories to organize
+                        your tasks based on work, personal activities,
+                        studies, or any other area of your life.
+                        You can also add descriptions, subtasks,
+                        and customize task colors.
+                    </p>
+                </article>
+
+                <article class="faq-item">
+                    <h3>How do recurring tasks work?</h3>
+                    <p>
+                        Recurring tasks help you manage activities
+                        that repeat on a regular schedule. You can
+                        configure recurring options when creating
+                        or editing a task.
+                    </p>
+                </article>
+
+                <article class="faq-item">
+                    <h3>How can I use GreenList widgets?</h3>
+                    <p>
+                        Add a GreenList widget to your iPhone Home Screen.
+                        You can choose a category to display and view
+                        your tasks and progress directly from the widget.
+                    </p>
+                </article>
+
+                <article class="faq-item">
+                    <h3>How do I back up my data?</h3>
+                    <p>
+                        GreenList provides manual backup and export
+                        options. You can create a backup and save the
+                        backup file to iCloud Drive or another available
+                        location using the iOS file interface.
+                    </p>
+                </article>
+
+                <article class="faq-item">
+                    <h3>How can I restore my backup?</h3>
+                    <p>
+                        Open the backup and restore section in GreenList
+                        and select your previously exported backup file.
+                        Follow the instructions in the app to restore
+                        your tasks and categories.
+                    </p>
+                </article>
+
+                <article class="faq-item">
+                    <h3>How do I unlock GreenList Premium?</h3>
+                    <p>
+                        You can unlock Premium through the in-app
+                        purchase options available in GreenList.
+                        Depending on the available options, you can
+                        choose a Lifetime purchase or a Monthly
+                        subscription.
+                    </p>
+                </article>
+
+                <article class="faq-item">
+                    <h3>How can I restore my Premium purchase?</h3>
+                    <p>
+                        Open GreenList and use the Restore Purchases
+                        option. Make sure you are signed in to the
+                        Apple Account used to make the original purchase.
+                    </p>
+                </article>
+
+                <article class="faq-item">
+                    <h3>Where is my task data stored?</h3>
+                    <p>
+                        Your task data is stored locally on your device.
+                        Remember to create and safely store backups
+                        if you want to restore your data later or
+                        move it to another device.
+                    </p>
+                </article>
+
+                <article class="faq-item">
+                    <h3>How can I report a problem or suggest a feature?</h3>
+                    <p>
+                        We welcome your feedback. Send us an email
+                        describing the issue or feature you'd like
+                        to suggest. Including your device model and
+                        iOS version can help us investigate problems.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/greenlist">GreenList Home</a>
+            <a href="/greenlist/privacy-policy">Privacy Policy</a>
+            <a href="mailto:support@deptapaul.dev">Contact Support</a>
+        </div>
+
+        <p>
+            © 2026 Depta Paul. All rights reserved.
+        </p>
+
+        <p style="margin-top: 5px;">
+            GreenList – Organize Your Day
+        </p>
+    </footer>
+
+</body>
+</html>
+
